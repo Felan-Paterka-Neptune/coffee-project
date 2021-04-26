@@ -17,20 +17,38 @@ function renderCoffees(coffees) {
     }
     return html;
 }
+function selector () {
+    if (document.getElementById("roastSelection").value == "all"){
+        console.log("hello world")
+    } else {
+    function updateCoffees(e) {
+        e.preventDefault(); // don't submit the form, we just want to update the data
+        var selectedRoast = roastSelection.value;
+        var filteredCoffees = [];
+        coffees.forEach(function (coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
 
+
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+
+    }}
+}
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
 
+
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
 // function selectAll() {
 //     h3 = document.getElementsByTagName("h3");
 //     for (i = 0; i < h3.length; i++)
