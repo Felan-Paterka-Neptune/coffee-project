@@ -25,7 +25,10 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else {
+
         }
+
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
@@ -33,21 +36,28 @@ function updateCoffees(e) {
 
 
 
-function updateResult(query) {
-    let resultList = document.querySelector(".result");
-    resultList.innerHTML = "";
+function myFunction() {
+    // Declare variables
+    var input, filter, div, h3, i, txtValue;
+    input = document.getElementById("search-coffees");
+    filter = input.value.toLowerCase();
+    div = document.getElementsByClassName("coffee");
 
-    arr.map(function(algo){
-        query.split(" ").map(function (word){
-            if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
-                resultList.innerHTML += `<li class="list-group-item">${algo}</li>`;
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < div.length; i++) {
+        h3 = div[i].getElementsByTagName("h3")[0];
+        if (h3) {
+            txtValue = h3.textContent || h3.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                div[i].style.display = "";
+            } else {
+                div[i].style.display = "none";
             }
-        })
-    })
+        }
+    }
 }
-
-
-
+myFunction();
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -72,4 +82,4 @@ var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
-submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('click', updateCoffees);

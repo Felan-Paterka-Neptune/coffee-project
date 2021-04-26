@@ -14,10 +14,12 @@
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
+            <option>all roasts</option>
         </select>
         <br>
         <label for="search-coffees"></label>
-        <input oninput="updateResult(this.value)" id="search-coffees" type="search" />
+<!--        <input oninput="updateResult(this.value)" id="search-coffees" type="search" />-->
+        <input type="text" id="search-coffees" onkeyup="myFunction()" placeholder="Search for names..">
         <br>
         <input id="submit" type="submit" />
     </form>
