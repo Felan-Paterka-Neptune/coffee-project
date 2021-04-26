@@ -15,19 +15,29 @@
             <option>medium</option>
             <option>dark</option>
         </select>
+        <br>
+        <label for="search-coffees"></label>
+        <input oninput="updateResult(this.value)" id="search-coffees" type="search" />
+        <br>
         <input id="submit" type="submit" />
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+
+    <div id="coffees">
+        <h3>NAME</h3>
+        <p>ROAST</p>
+    </div>
+
+<!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>ID</th>-->
+<!--                <th>NAME</th>-->
+<!--                <th>ROAST</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="coffees"></tbody>-->
+<!--    </table>-->
 
     <script src="main.js"></script>
 </body>
