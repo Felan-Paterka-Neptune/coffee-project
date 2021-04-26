@@ -25,15 +25,19 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-        } else {
-
         }
 
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
+// function selectAll() {
+//     h3 = document.getElementsByTagName("h3");
+//     for (i = 0; i < h3.length; i++)
+//     {
+//         h3[i].selected = "true";
+//     }
+// }
 
 
 function myFunction() {
@@ -83,3 +87,9 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
 roastSelection.addEventListener('click', updateCoffees);
+
+submitButton.addEventListener('click', renderCoffees());
+
+// function allRoasts() {
+//     roastSelection.addEventListener('click', updateCoffees);
+// }
