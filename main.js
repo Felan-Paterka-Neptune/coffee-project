@@ -45,8 +45,8 @@ function myFunction2() {
     document.getElementById("demo").innerHTML = coffees;
 
 }
-var newCoffeeName = document.getElementById('new-coffee-name');
-var newCoffeeRoast=document.getElementById('newCoffeeRoast');
+// var newCoffeeName = document.getElementById('new-coffee-name');
+// var newCoffeeRoast=document.getElementById('newCoffeeRoast');
 
 
 
@@ -142,21 +142,28 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+var newCoffeeName = document.getElementById("newCoffeeName");
+var newCoffeeRoast = document.getElementById("addCoffee");
+
 function createCoffee(newCoffeeName,newCoffeeRoast) {
+    var newCoffeeName = document.getElementById("newCoffeeName");
+    var newCoffeeRoast = document.getElementById("addCoffee");
+
     var newCoffee = {
         name: newCoffeeName,
         roast: newCoffeeRoast
     }
+    return coffees.push(newCoffee)
 }
 
-function newCoff(name, roast) {
-    var newNew = {
-        name: name,
-        roast: roast,
-    }
-    return coffees.push(newNew)
-}
-newCoff()
+// function newCoff(name, roast) {
+//     var newNew = {
+//         name: name,
+//         roast: roast,
+//     }
+//     return coffees.push(newNew)
+// }
+// newCoff()
 
 var tbody = document.querySelector('#coffees');
 // var submitButton = document.querySelector('#submit');
@@ -166,7 +173,9 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 roastSelection.addEventListener('click', updateCoffees);
 
-submitButton.addEventListener('click',updateCoffees())
+var newCoffeeSubmit = document.querySelector('#submit')
+newCoffeeSubmit.addEventListener("click", createCoffee());
+
 
 
 // submitButton.addEventListener('click', renderCoffees());
