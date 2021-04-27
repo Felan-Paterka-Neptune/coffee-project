@@ -14,6 +14,7 @@ function renderCoffees(coffees) {
     for (var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
+
     return html;
 }
 
@@ -148,19 +149,28 @@ var submitButton = document.querySelector("#submitNewCoffee");
 submitButton.addEventListener("click", createCoffee);
 
 function createCoffee(newCoffeeName, newCoffeeRoast) {
-    var newCoffeeId = '15';
+
+
+
+
+
     newCoffeeName = document.getElementById("newCoffeeName");
     newCoffeeRoast = document.getElementById("newCoffeeRoast");
     var newCoffee = {
-        id: newCoffeeId.value,
+        id: coffees.length+1,
         name: newCoffeeName.value,
         roast: newCoffeeRoast.value
     }
     coffees.push(newCoffee);
+    localStorage.setItem("coffees", JSON.stringify(coffees));
     console.log(coffees);
     event.preventDefault();
     tbody.innerHTML = renderCoffees(coffees);
+
 }
+
+var stored = JSON.parse(localStorage.getItem("coffees"));
+
 //
 // var submitButton = document.querySelector("#submitNewCoffee");
 // submitButton.addEventListener("click", createCoffee);
@@ -178,6 +188,6 @@ var tbody = document.querySelector('#coffees');
 // var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees.reverse());
+tbody.innerHTML = renderCoffees(stored.reverse());
 // submitButton.addEventListener('click', renderCoffees());
 roastSelection.addEventListener('click', updateCoffees);
