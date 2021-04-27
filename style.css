@@ -1,9 +1,10 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+
+* {
+    color: black;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+body {
+    background-color: #f0eee8;
+    font-family: 'Averia Serif Libre', cursive;
 }
