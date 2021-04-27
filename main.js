@@ -45,6 +45,25 @@ function myFunction2() {
     document.getElementById("demo").innerHTML = coffees;
 
 }
+var newCoffeeName = document.getElementById('new-coffee-name');
+var newCoffeeRoast=document.getElementById('newCoffeeRoast');
+
+
+function createCoffee(newCoffeeName,newCoffeeRoast) {
+    var newCoffee = {
+        name: newCoffeeName,
+        roast: newCoffeeRoast
+    }
+}
+
+function newCoff(name, roast) {
+    var newNew = {
+        name:name,
+        roast:roast
+    }
+    return coffees.push(newCoffee)
+}
+
 
 
 // function updateCoffees(e) {
@@ -143,6 +162,9 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
 roastSelection.addEventListener('click', updateCoffees);
+
+submitButton.addEventListener('click',updateCoffees())
+
 
 // submitButton.addEventListener('click', renderCoffees());
 
