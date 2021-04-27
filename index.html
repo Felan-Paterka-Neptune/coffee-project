@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="container">
 <h1 class="text-center col-12">Coffee!</h1>
 <hr>
 
 <div class="row">
+<!--    COFFEE LIST ON LEFT-->
     <div id="coffees" class="col-6">
         <h3>NAME</h3>
         <p>ROAST</p>
     </div>
-
+<!--    FIRST FORM -->
     <div class="col-6">
         <form>
             <label class="font-weight-bold" for="roast-selection">Roast</label>
             <br>
-            <select class="w-100 p-2" id="roast-selection">
+            <select class="w-100 p-1" id="roast-selection">
                 <option>light</option>
                 <option>medium</option>
                 <option>dark</option>
@@ -29,21 +30,19 @@
             </select>
             <br>
             <br>
-
             <label class="font-weight-bold" for="search-coffees">Coffee Name</label>
             <br>
             <input class="w-100 px-2" type="text" id="search-coffees" onkeyup="myFunction()">
         </form>
         <br>
         <br>
-
-        <!------    // bonus form ------------>
+<!--        BONUS FORM -->
         <form action=""></form>
         <h1 class="text-center">Add a Coffee</h1>
         <form >
-            <label class="font-weight-bold" for="addCoffee">Roast</label>
+            <label class="font-weight-bold" for="newCoffeeRoast">Roast</label>
             <br>
-            <select class="w-100 p-2" id="addCoffee">
+            <select class="w-100 p-1" id="newCoffeeRoast">
                 <option>light</option>
                 <option>medium</option>
                 <option>dark</option>
@@ -55,8 +54,7 @@
             <input class="w-100 px-2" type="text" id="newCoffeeName" >
             <br>
             <br>
-<!--            <button class="w-100 bg-primary text-white rounded border-0 p-1" value="Submit" id="button"> submit</button>-->
-            <input  class="w-100 bg-primary text-white rounded border-0 p-1" id="submit" type="button" value="Submit"/>
+            <input  class="w-100 bg-primary text-white rounded border-0 p-1" id="submitNewCoffee" type="button" value="Submit"/>
         </form>
     </div>
 </div>
@@ -64,5 +62,6 @@
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 </body>
 </html>
