@@ -49,21 +49,7 @@ var newCoffeeName = document.getElementById('new-coffee-name');
 var newCoffeeRoast=document.getElementById('newCoffeeRoast');
 
 
-function createCoffee(newCoffeeName,newCoffeeRoast) {
-    var newCoffee = {
-        name: newCoffeeName,
-        roast: newCoffeeRoast
-    }
-}
 
-function newCoff(name, roast) {
-    var newNew = {
-        name: name,
-        roast: roast,
-    }
-    return coffees.push(newNew)
-}
-newCoff()
 
 
 
@@ -155,6 +141,22 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+
+function createCoffee(newCoffeeName,newCoffeeRoast) {
+    var newCoffee = {
+        name: newCoffeeName,
+        roast: newCoffeeRoast
+    }
+}
+
+function newCoff(name, roast) {
+    var newNew = {
+        name: name,
+        roast: roast,
+    }
+    return coffees.push(newNew)
+}
+newCoff()
 
 var tbody = document.querySelector('#coffees');
 // var submitButton = document.querySelector('#submit');
