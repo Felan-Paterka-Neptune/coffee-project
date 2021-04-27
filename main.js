@@ -1,11 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-flex flex-wrap col-6 ">';
+    var html = '<div class="coffee col-6 ">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h3 class="m-1">' + coffee.name + '</h3>';
+    html += '<div class="d-flex align-items-center"><h3 class="m-1">' + coffee.name + '</h3>';
     html += '<p class="m-1">' + coffee.roast + '</p>';
-    html += '</div>';
+    html += '</div></div>';
     return html;
 }
 
@@ -17,7 +17,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-// SELECT ALL ROASTS FUNCTION
+// SELECT ALL ROASTS FUNCTIONz
 function updateCoffees(e) {
     if (document.getElementById("roast-selection").value === "all") {
         tbody.innerHTML = renderCoffees(coffees);

@@ -8,3 +8,11 @@ body {
     background-color: #f0eee8;
     font-family: 'Averia Serif Libre', cursive;
 }
+
+#coffees {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
