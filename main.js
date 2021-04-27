@@ -134,20 +134,37 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-function createCoffee(newCoffeeName,newCoffeeRoast) {
+// function createCoffee(newCoffeeName,newCoffeeRoast) {
+//     newCoffeeName = document.getElementById("newCoffeeName");
+//     newCoffeeRoast = document.getElementById("newCoffeeRoast");
+//
+//     var newCoffee = {
+//         name: newCoffeeName.value,
+//         roast: newCoffeeRoast.value
+//     }
+//     return coffees.push(newCoffee);
+// }
+var submitButton = document.querySelector("#submitNewCoffee");
+submitButton.addEventListener("click", createCoffee);
+
+function createCoffee(newCoffeeName, newCoffeeRoast) {
+    var newCoffeeId = '15';
     newCoffeeName = document.getElementById("newCoffeeName");
     newCoffeeRoast = document.getElementById("newCoffeeRoast");
-
     var newCoffee = {
+        id: newCoffeeId.value,
         name: newCoffeeName.value,
         roast: newCoffeeRoast.value
     }
-    return coffees.push(newCoffee);
+    coffees.push(newCoffee);
+    console.log(coffees);
+    event.preventDefault();
+    tbody.innerHTML = renderCoffees(coffees);
 }
-
-var submitButton = document.querySelector("#submitNewCoffee");
-submitButton.addEventListener("click", createCoffee);
-submitButton.addEventListener("click", renderCoffees);
+//
+// var submitButton = document.querySelector("#submitNewCoffee");
+// submitButton.addEventListener("click", createCoffee);
+// submitButton.addEventListener("click", renderCoffees);
 
 // function createCoffee(newCoffeeName,newCoffeeRoast) {
 //     var newCoffee = {
