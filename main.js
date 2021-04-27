@@ -146,12 +146,12 @@ var newCoffeeName = document.getElementById("newCoffeeName");
 var newCoffeeRoast = document.getElementById("addCoffee");
 
 function createCoffee(newCoffeeName,newCoffeeRoast) {
-    var newCoffeeName = document.getElementById("newCoffeeName");
-    var newCoffeeRoast = document.getElementById("addCoffee");
+    // var newCoffeeName = document.getElementById("newCoffeeName");
+    // var newCoffeeRoast = document.getElementById("addCoffee");
 
     var newCoffee = {
-        name: newCoffeeName,
-        roast: newCoffeeRoast
+        name: newCoffeeName.value,
+        roast: newCoffeeRoast.value
     }
     return coffees.push(newCoffee)
 }
@@ -173,8 +173,7 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 roastSelection.addEventListener('click', updateCoffees);
 
-var newCoffeeSubmit = document.querySelector('#submit')
-newCoffeeSubmit.addEventListener("click", createCoffee());
+document.getElementById("submit").addEventListener("click", createCoffee)
 
 
 
