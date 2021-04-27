@@ -59,6 +59,36 @@ function myFunction2() {
 //     tbody.innerHTML = renderCoffees(filteredCoffees);
 // }
 
+
+document.querySelector('form button').addEventListener('click', function(event) {
+
+    var inputs = document.querySelectorAll('#newCoffeeName');
+    var roast = document.querySelectorAll('#addCoffee');
+
+    var newCoffee = {};
+    for (var i = 0; i < inputs.length; i++) {
+        newCoffee[inputs[i].name] = inputs[i].value;
+        inputs[i].value = '';
+
+        newCoffee[roast[i].roast] = roast[i].value;
+        roast[i].value = '';
+    }
+    coffees.push(newCoffee);
+    console.log(coffees);
+    event.preventDefault();
+
+}, false);
+
+
+
+
+
+
+
+
+
+
+
 // function selectAll() {
 //     h3 = document.getElementsByTagName("h3");
 //     for (i = 0; i < h3.length; i++)
